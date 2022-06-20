@@ -5,7 +5,7 @@
         align-content: start;
         gap: $gap;
         padding: 50px;
-
+        
         @media (max-width: $mq-tablet){ padding: $padding; }
         @media (max-width: $mq-mobile-s){ padding: $padding * 1.5; }
 

@@ -9,7 +9,7 @@
         background-color: $white;
 
         @media (max-width: $mq-tablet){ padding: $padding; }
-        @media (max-width: $mq-mobile-s){ padding: 0; }
+        @media (max-width: $mq-mobile-s){ padding: $padding 0; }
     }   
 
     &__list{
