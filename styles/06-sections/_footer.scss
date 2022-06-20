@@ -1,0 +1,63 @@
+.footer{
+    &__wrapper{
+        display: grid;
+        grid-template-columns: auto 1fr auto;
+        grid-template-areas: "logo . icons";
+        gap: $gap;
+        
+        width: 100%;
+        max-width: $max-width-layout;
+        height: 100%;
+
+        @media (max-width: $mq-mobile){ 
+            grid-template-columns: 1fr;
+            grid-template-areas: "logo" "icons";
+        }
+
+    }
+    &__logo{
+        grid-area: logo;
+        display: grid;
+        align-items: end;
+
+        @media (max-width: $mq-mobile){ 
+            justify-content: center;
+            align-items: center;
+        }
+    }
+    &__info{
+        display: grid;
+        gap: $gap;
+        grid-area: icons;
+           
+        &-icons{
+            display: grid;
+            grid-auto-flow: column;
+            justify-content: end;
+            gap: $gap;
+
+            @media (max-width: $mq-mobile){ 
+                justify-content: center;
+            }
+        }
+        &-terms{
+            display: grid;
+            grid-auto-flow: column;
+            justify-content: end;
+            gap: $gap;
+
+            @media (max-width: $mq-mobile){ 
+                justify-content: center;
+            }
+            @media (max-width: $mq-xs){ 
+                grid-auto-flow: row;
+                text-align: center;
+            }
+        }
+            &-term{
+                @include f-footer();
+                text-transform: capitalize;
+                color: rgba($black, 0.6);
+            }
+    }
+}

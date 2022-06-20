@@ -1,0 +1,76 @@
+.banner{
+    &::after{
+        content: '';
+        position: absolute;
+        bottom: -30px;
+        left: 0;
+        width: 100%;
+        height: 60px;
+        background-image: radial-gradient(closest-side, rgba($black, 0.6) 0px, rgba($black, 0.2) 50%, transparent 100%);
+    }
+    &__video{
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        object-position: center;
+    }
+    &__overlay{
+        @include flex(flex, center, center, row, nowrap);
+        position: absolute;
+        top: 0;
+        left: 0;
+        z-index: 10;
+
+        width: 100%;
+        height: 100%;
+        padding: $padding;
+        
+        background-image: linear-gradient(to bottom, rgba($black, .9), rgba($black, .1) 100px);
+    }
+        &__info{
+            display: grid;
+            row-gap: 40px;
+            width: 100%;
+            max-width: $width-layout;
+            margin-top: 35px;
+
+            &-title{
+                @include f-main-title();
+                color: $white;
+                max-width: $min-width-layout;
+            }
+        }
+        &__form{
+            position: relative;
+            width: 100%;
+            max-width: 660px;
+            transition: max-width 1000ms;
+
+            @media (max-width: $mq-mobile){ max-width: 100%; }
+        
+            &-input{
+                @include f-main-input();
+                width: 100%;
+                height: 75px;
+                padding: $padding;
+                
+                color: rgba($black, .35);
+                background-color: $white;
+
+                @media (max-width: $mq-mobile){ height: 46px; }
+            }
+            &-icon{
+                position: absolute;
+                right: $padding;
+                top: 50%;
+                width: 32px;
+                height: 32px;
+                transform: translateY(-50%);
+
+                @media (max-width: $mq-mobile){ 
+                    width: 16px;
+                    height: 16px;
+                }
+            }
+        }
+}

@@ -1,0 +1,34 @@
+.teams-banner{
+    &__bg{
+        position: relative;
+        top: 35%;
+
+        width: 100%;
+        max-width: $max-width-layout * .95;
+        height: 125%;
+        overflow: hidden;
+
+        @media (max-width: $max-width-layout){ top: 80px; }
+        @media (max-width: $mq-tablet){ 
+            top: 0; 
+            height: 100%;
+
+            &::after{
+                content: '';
+                position: absolute;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+                background-image: linear-gradient(to bottom, rgba(black, .75), rgba($black, .65) 30%, rgba($black, .3) 60%);
+            }
+        }
+
+    }
+        &__img{
+            width: 100%;
+            height: 100%;
+            object-position: center;
+            object-fit: cover;
+        }
+}

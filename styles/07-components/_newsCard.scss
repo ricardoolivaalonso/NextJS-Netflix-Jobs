@@ -1,0 +1,29 @@
+.news{
+    &__wrapper{
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: $gap;
+        width: 100%;
+        max-width: $min-width-layout;
+
+        @media (max-width: $mq-mobile){ grid-template-columns: 1fr; }
+    }   
+    &-card{
+        display: grid;
+        align-content: start;
+        gap: $gap;
+        padding: 27px;
+        background-color: $white;
+        box-shadow: $shadow;
+
+        &__category{
+            font-size: .875rem;
+            font-weight: 100;
+            padding-left: 10px;
+            border-left: 1px solid $red;
+        }
+        &__image{
+            max-width: 100%;
+        }
+    }
+}

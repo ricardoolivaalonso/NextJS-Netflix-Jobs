@@ -1,0 +1,1 @@
+export const CardDescriptionElement = ({children}) => <p className="card-description">{children}</p>

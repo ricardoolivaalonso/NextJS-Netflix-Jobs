@@ -1,0 +1,18 @@
+.is-header-visible{
+    background-color: $white;
+    &::after{
+        content: '';
+        position: absolute;
+        bottom: -5px;
+        width: 100%;
+        height: 10px;
+        background-image: radial-gradient(closest-side, rgba($black, 0.6) 0px, rgba($black, 0.2) 50%, transparent 100%);
+    }
+    .menu__link{ color: $black; }
+    .header__logo path:nth-of-type(2){ fill: $black; }
+    .header__logo-mobile path:nth-of-type(2){ fill: $black; }
+}
+.is-input-focused{
+    max-width: 100%;
+    transition: max-width 1000ms;
+}

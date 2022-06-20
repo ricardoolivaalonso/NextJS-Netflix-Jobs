@@ -1,0 +1,23 @@
+$bg: #f5f5f1;
+$black: #221f1f;
+$white: #ffffff;
+$red: #e50a13;
+$shadow: rgba($black, 0.3) 0px 8px 16px 0px;
+// 
+$max-width-layout: 1440px;
+$width-layout: 1200px;
+$min-width-layout: 960px;
+// 
+$padding: 18px;
+$gap: 15px;
+// 
+$mq-tablet: 945px;
+$mq-mobile: 769px;
+$mq-mobile-s: 560px;
+$mq-xs: 360px;
+
+:root{
+    --gap-section: 64px;
+    @media (max-width: $mq-tablet){  --gap-section: 32px; }
+}
+

@@ -1,0 +1,25 @@
+.teams{
+    &-card{
+        display: grid;
+        justify-content: center;
+        align-content: start;
+        gap: $gap;
+        padding: 50px;
+
+        @media (max-width: $mq-tablet){ padding: $padding; }
+        @media (max-width: $mq-mobile-s){ padding: $padding * 1.5; }
+
+        &__img{
+            width: 100%;
+            max-width: 112px;
+            margin: 0 auto;
+        }
+        &__list{
+            display: grid;
+            justify-content: center;
+            gap: 10px;
+        }
+            &__title{ @include f-card-title2(); }
+            &__link{ @include f-card-link(); }
+    }
+}

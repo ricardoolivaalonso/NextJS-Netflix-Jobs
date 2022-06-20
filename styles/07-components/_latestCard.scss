@@ -1,0 +1,87 @@
+.latest{
+    &__wrapper{
+        display: grid;
+        grid-auto-flow: column;
+        gap: 1px;
+
+        width: 100%;
+        max-width: $min-width-layout;
+        
+        overflow-x: auto;
+        overflow-y: hidden;
+        background-color: $white;
+        box-shadow: $shadow;
+    }   
+
+    &-card{
+        position: relative;
+        overflow: hidden;
+        cursor: pointer;
+
+        @media (max-width: $mq-mobile){ min-width: 250px; }
+
+        &::before{
+            content: '';
+            display: block;
+            padding-top: calc( (1.1/1) * 100% );
+        }
+        &::after{
+            content: '';
+            position: absolute;
+            top: 100%;
+            width: 100%;
+            height: 10px;
+            background-color: $red;
+            z-index: 10;
+            transition: top 500ms;
+        }
+      
+        &:hover{
+            @media (hover: hover){ 
+                .latest-card__img{ 
+                    transform: scale(1.025);
+                    transition: 1000ms;
+                }
+                &::after{ 
+                    transition: top 00ms;
+                    top: calc(100% - 10px);
+                }
+            }
+        }
+        &__bg{
+            position: absolute;
+            top: 0;
+            width: 100%;
+            height: 100%;
+        }
+            &__img{
+                height: 100%;
+                width: 100%;
+                object-fit: cover;
+                transition: 1000ms;
+            }
+        &__info{
+            display: grid;
+            align-items: end;
+
+            color: $white;
+            position: absolute;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            padding: 30px;
+            z-index: 10;
+
+            background-image: linear-gradient(to top, rgba(black, .9), rgba($black, .9) 30%, rgba($black, .3) 60%);
+        }
+        &__icon{
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+        }
+        &__title{
+            @include f-card-description();
+        }
+    }
+}

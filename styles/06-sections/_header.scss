@@ -1,0 +1,44 @@
+.header{
+    &__wrapper{
+        display: grid;
+        justify-content: center;
+        align-items: center;
+        grid-template-columns: auto 1fr auto;
+        grid-template-areas: "logo . menu";
+        
+        width: 100%;
+        max-width: $max-width-layout;
+        height: 100%;
+        
+    }
+    &__logo{
+        grid-area: logo;
+        width: 213px;
+        height: 38px;
+        outline-color: $red;
+        
+        @media (max-width: $mq-tablet){ display: none; }
+        &-mobile{ @media (min-width: $mq-tablet){ display: none; } }
+    }
+}
+.menu{
+    grid-area: menu;
+
+    &__list{
+        grid-area: menu;
+        display: grid;
+        grid-auto-flow: column;
+        gap: $gap;
+    }
+        &__item{ display: grid; }
+        &__link{
+            @include f-menu();
+            text-transform: uppercase;
+            color: $white;
+            outline-color: $red;
+            
+            &:hover{
+                @media (hover: hover){ color: $red; }
+            }
+        }
+}

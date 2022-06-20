@@ -1,0 +1,27 @@
+.teams{
+    &__wrapper{
+        display: grid;
+        gap: $gap;
+
+        width: 100%;
+        max-width: $width-layout;
+        padding: $padding * 2;
+        background-color: $white;
+
+        @media (max-width: $mq-tablet){ padding: $padding; }
+        @media (max-width: $mq-mobile-s){ padding: 0; }
+    }   
+
+    &__list{
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+        gap: $gap;
+        margin-top: 50px;
+
+        @media (max-width: $mq-tablet){ 
+            grid-template-columns: 1fr 1fr; 
+            margin-top: $padding;
+        }
+        @media (max-width: $mq-mobile-s){ grid-template-columns: 1fr; }
+    }
+}

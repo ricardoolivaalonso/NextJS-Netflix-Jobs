@@ -1,0 +1,1 @@
+export const CardTitleElement = ({children}) => <h2 className="card-title">{children}</h2>

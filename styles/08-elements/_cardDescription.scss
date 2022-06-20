@@ -1,0 +1,4 @@
+.card-description{ 
+    @include f-card-description();
+    span{ color: $red; }
+}
